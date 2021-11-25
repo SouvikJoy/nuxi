@@ -1,8 +1,10 @@
 <template>
   <div>
-    <pre>
+    <Suspense>
+      <pre>
       {{ data }}
     </pre>
+    </Suspense>
   </div>
 </template>
 
