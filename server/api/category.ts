@@ -5,8 +5,9 @@ export default async(req, res) => {
   const { SUPABASE_URL, SUPABASE_KEY } = process.env
   try {
     const supabase = createClient(SUPABASE_URL, SUPABASE_KEY)
-    const { data } = await supabase.from('products').select('*')
-    return { products: data }
+    const { data } = await supabase.from('categories').select('*')
+
+    return data
   }
   catch (error) {
     // eslint-disable-next-line no-console
