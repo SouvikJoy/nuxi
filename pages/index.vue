@@ -80,7 +80,7 @@
       </div>
       <div
 
-        class="grid md:grid-cols-2 gap-8"
+        class="grid md:grid-cols-2 gap-8 mx-6"
       >
         <div v-for="(product, index) in products" :key="index">
           <HorizontalCard :product="product" class="mx-6 md:mx-0" />
