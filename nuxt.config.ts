@@ -1,7 +1,8 @@
 import { defineNuxtConfig } from 'nuxt3'
 
 export default defineNuxtConfig({
-  title: 'Vitesse Nuxt 3',
+  // @ts-ignore
+  title: 'Morgan Design',
   buildModules: [
     '@vueuse/core/nuxt',
     '@unocss/nuxt',

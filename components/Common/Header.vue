@@ -12,6 +12,24 @@
         </div>
       </div>
 
+      <div class="md:block hidden">
+        <nuxt-link to="/" class="px-4">
+          About
+        </nuxt-link>
+
+        <nuxt-link to="/" class="px-4">
+          Services
+        </nuxt-link>
+
+        <nuxt-link to="/" class="px-4">
+          Gallery
+        </nuxt-link>
+
+        <nuxt-link to="/" class="px-4">
+          Contact
+        </nuxt-link>
+      </div>
+
       <DarkToggle />
     </div>
   </div>

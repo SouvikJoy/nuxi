@@ -4,7 +4,7 @@
       <div class="md:flex-shrink-0">
         <nuxt-link to="/">
           <img
-            class="w-80 object-cover"
+            class="max-w-60 object-cover"
             :src=" 'https://dgzzoucizotfvfgamwgz.supabase.in/storage/v1/object/public/product-bucket/' + product.image"
             :alt="product.name"
           >

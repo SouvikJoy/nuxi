@@ -49,13 +49,18 @@
               v-if="category.image"
               :src="'https://dgzzoucizotfvfgamwgz.supabase.in/storage/v1/object/public/product-bucket/' + category.image"
               :alt="category.name"
-              class="h-60"
+              class="max-h-52"
             />
-            <div
-              class="text-center text-2xl font-bold py-6"
+            <p
+              class="text-center text-2xl font-bold pt-6"
             >
               {{ category.name }}
-            </div>
+            </p>
+            <p
+              class="text-center text-sm text-gray-500 font-bold"
+            >
+              {{ category.description }}
+            </p>
           </div>
         </div>
       </div>
@@ -82,6 +87,129 @@
         </div>
       </div>
     </div>
+
+    <div class="index_3 dt_index_page_2 md:py-20">
+      <div class="container mx-auto">
+        <div class="flex place-items-center gap-4 px-10">
+          <div
+            class="text-2xl md:text-5xl font-bold py-6"
+          >
+            Services
+          </div>
+          <hr
+            class="border-4 w-full border-cyan-400"
+          >
+        </div>
+        <div class="grid md:grid-cols-2 md:place-items-center md:grid-flow-col gap-4">
+          <div class="row-span-2 self-center">
+            <img
+              src="https://res.cloudinary.com/souvik-joy/image/upload/v1631621592/5.avif"
+              alt="background image"
+            />
+          </div>
+          <div
+            class="grid grid-cols-2"
+          >
+            <div v-for="(service, index) in services" :key="index">
+              <div class="p-6">
+                <img
+                  src="https://res.cloudinary.com/souvik-joy/image/upload/v1631639320/icon-4.svg"
+                  :alt="service.name"
+                  class="mb-2"
+                />
+                <p class="text-2xl md:text-3xl md:mb-4">
+                  {{ service.name }}
+                </p>
+                <p class="text-[14px] md:text-[16px] text-gray-600 dark:text-gray-400">
+                  {{ service.description }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form class="text-gray-600 dark:text-gray-300 bg-cyan-50 body-font" @submit.prevent="postToDB">
+      <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
+        <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
+          <h1 class="title-font font-medium text-3xl text-gray-900 dark:text-white">
+            Subscribe to Morgan Design
+          </h1>
+          <p class="leading-relaxed mt-4">
+            I send out a weekly newsletter with tips and tricks for web
+            development. I promise, only relevant content will be sent.
+          </p>
+        </div>
+        <div
+          class="
+          lg:w-2/6
+          md:w-1/2
+          bg-gray-100
+          dark:bg-gray-700
+          rounded-lg
+          p-8
+          flex flex-col
+          md:ml-auto
+          w-full
+          mt-10
+          md:mt-0
+        "
+        >
+          <h2 class="text-gray-900 dark:text-gray-300 text-lg font-medium title-font mb-5">
+            Subscribe
+          </h2>
+
+          <div class="relative mb-4">
+            <label
+              for="email"
+              class="leading-7 text-sm text-gray-600 dark:text-gray-300"
+            >Email</label>
+            <input
+              id="email"
+              v-model="userEmail"
+              type="email"
+              name="email"
+              class="
+              w-full
+              bg-white
+              rounded
+              border border-gray-300
+              focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200
+              text-base
+              outline-none
+              text-gray-700
+              py-1
+              px-3
+              leading-8
+              transition-colors
+              duration-200
+              ease-in-out
+            "
+            />
+          </div>
+          <button
+            class="
+            text-white
+            bg-cyan-500
+            border-0
+            py-2
+            px-8
+            focus:outline-none
+            hover:bg-indigo-600
+            rounded
+            text-lg
+          "
+          >
+            Subscribe
+          </button>
+          <p class="text-xs text-gray-500 mt-3">
+            Literally you probably haven't heard of them the things i'm bout to
+            shoot into your inbox.
+          </p>
+        </div>
+      </div>
+    </form>
   </div>
 </template>
 
@@ -91,6 +219,15 @@ import HorizontalCard from '../components/HorizontalCard'
 const { data: products } = await useFetch('/api/product')
 const { data: categories } = await useFetch('/api/category')
 const { data: infos } = await useFetch('/api/info')
+const { data: services } = await useFetch('/api/service')
+
+const DBResponse = ref([])
+const userEmail = ref('')
+async function postToDB() {
+  const result = await fetch(`/api/subscribe?email=${userEmail.value}`)
+  const data = await result.json()
+  DBResponse.value = data
+}
 </script>
 
 <script>
