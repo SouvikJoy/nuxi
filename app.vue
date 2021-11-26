@@ -18,5 +18,4 @@ import Footer from './components/Common/Footer'
 
 <style>
 @import '@unocss/reset/tailwind.css';
-@import '/public/styles/main.css';
 </style>
