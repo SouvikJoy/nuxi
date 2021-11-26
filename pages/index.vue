@@ -130,7 +130,7 @@
       </div>
     </div>
 
-    <form class="text-gray-600 dark:text-gray-300 bg-cyan-50 body-font" @submit.prevent="postToDB">
+    <form ref="subForm" class="text-gray-600 dark:text-gray-300 bg-cyan-50 body-font" @submit.prevent="postToDB">
       <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
         <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
           <h1 class="title-font font-medium text-3xl text-gray-900 dark:text-white">
@@ -227,6 +227,7 @@ async function postToDB() {
   const result = await fetch(`/api/subscribe?email=${userEmail.value}`)
   const data = await result.json()
   DBResponse.value = data
+  userEmail.value = ''
 }
 </script>
 
