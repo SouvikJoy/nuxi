@@ -4,13 +4,13 @@
       <div class="md:flex-shrink-0">
         <nuxt-link to="/">
           <img
-            class="w-full md:min-w-60 md:max-w-40 lg:min-w-80 h-52 object-cover"
+            class="w-full md:min-w-60 md:max-w-40 lg:min-w-80 h-56 object-cover"
             :src=" 'https://dgzzoucizotfvfgamwgz.supabase.in/storage/v1/object/public/product-bucket/' + product.image"
             :alt="product.name"
           >
         </nuxt-link>
       </div>
-      <div class="p-4 xl:p-8">
+      <div class="p-2 xl:p-8">
         <div class="uppercase tracking-wide text-sm font-semibold">
           {{ product.name }}
         </div>
@@ -22,7 +22,7 @@
         >
           {{ product.brief }}
         </a>
-        <p class="mt-2  text-sm xl:text-lg text-[#858685]">
+        <p class="mt-2  text-sm text-[#858685]">
           {{ product.description }}
         </p>
       </div>

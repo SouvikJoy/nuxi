@@ -49,7 +49,6 @@
               v-if="category.image"
               :src="'https://dgzzoucizotfvfgamwgz.supabase.in/storage/v1/object/public/product-bucket/' + category.image"
               :alt="category.name"
-              class="max-h-52"
             />
             <p
               class="text-center text-2xl font-bold pt-6"
