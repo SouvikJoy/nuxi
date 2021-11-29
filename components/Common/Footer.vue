@@ -1,9 +1,9 @@
 <template>
-  <div v-for="(info, index) in infos" :key="index" class="container mx-auto pt-6 py-2 px-8 md:px2">
+  <div v-for="(info, index) in infos" :key="index" class="container mx-auto pt-6 py-2 px-6 md:px-8">
     <div class="footer">
       <div class="xl:container xl:mx-auto">
         <div class="footer-content">
-          <div class="grid grid-cols-3 md:grid-cols-6 gap-20 place-item-center">
+          <div class="grid grid-cols-3 md:grid-cols-3 gap-20 place-item-center">
             <div class="col-span-2">
               <NuxtLink
                 to="/"
@@ -63,73 +63,29 @@
             </div>
             <div class="footer-links-column-1">
               <div class="column-heading">
-                Markets
+                Important Links
               </div>
               <hr
                 class="border-1 w-full border-cyan-400 my-4 mx-0"
               >
 
-              <div v-for="(link, index) in 4" :key="`a-${index}`">
-                <a href="#">Link</a>
-              </div>
-            </div>
-            <div class="footer-links-column-1">
-              <div class="column-heading">
-                Products
-              </div>
-              <hr
-                class="border-1 w-full border-cyan-400 my-4 mx-0"
-              >
-
-              <div v-for="(link, index) in 2" :key="`b-${index}`">
-                <a href="#">Link</a>
-              </div>
-              <div class="column-heading">
-                Material Builder
-              </div>
-              <hr
-                class="border-1 w-full border-cyan-400 my-4 mx-0"
-              >
-              <div v-for="(link, index) in 2" :key="`c-${index}`">
-                <a href="#">Link</a>
-              </div>
-            </div>
-            <div class="footer-links-column-1">
-              <div class="column-heading">
-                Workspaces
-              </div>
-              <hr
-                class="border-1 w-full border-cyan-400 my-4 mx-0"
-              >
-              <div v-for="(link, index) in 2" :key="`d-${index}`">
-                <a href="#">Link</a>
-              </div>
-              <div class="column-heading">
-                Brands
-              </div>
-              <hr
-                class="border-1 w-full border-cyan-400 my-4 mx-0"
-              >
-              <div v-for="(link, index) in 2" :key="`e-${index}`">
-                <a href="#">Link</a>
-              </div>
-            </div>
-            <div class="footer-links-column-1">
-              <div class="column-heading">
-                License
-              </div>
-              <hr
-                class="border-1 w-full border-cyan-400 my-4 mx-0"
-              >
-              <div v-for="(link, index) in 4" :key="`f-${index}`">
-                <a href="#">Link</a>
+              <div>
+                <nuxt-link to="/">
+                  Products
+                </nuxt-link>
+                <nuxt-link to="/">
+                  About us
+                </nuxt-link>
+                <nuxt-link to="/">
+                  Contact
+                </nuxt-link>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="flex align-middle py-2 px-6 justify-between p dark:bg-gray my-2">
+    <div class="md:flex text-center align-middle py-2 md:px-6 px-2 justify-between p dark:bg-gray my-2">
       <div class="copyright-text">
         © {{ new Date().getFullYear() }} |
         <span class="font-bold">
