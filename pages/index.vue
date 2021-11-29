@@ -102,7 +102,7 @@
         <div class="grid md:grid-cols-2 md:place-items-center md:grid-flow-col gap-4">
           <div class="row-span-2 self-center">
             <img
-              src="https://res.cloudinary.com/souvik-joy/image/upload/v1631621592/5.avif"
+              src="https://res.cloudinary.com/souvik-joy/image/upload/v1637011482/bg-3_ly3atb.avif"
               alt="background image"
             />
           </div>
