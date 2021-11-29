@@ -5,7 +5,7 @@ export default async(req, res) => {
   const { SUPABASE_URL, SUPABASE_KEY } = process.env
   try {
     const supabase = createClient(SUPABASE_URL, SUPABASE_KEY)
-    const { data } = await supabase.from('categories').select('*')
+    const { data } = await supabase.from('services').select('*')
 
     return data
   }
