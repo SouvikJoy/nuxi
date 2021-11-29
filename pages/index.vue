@@ -23,7 +23,7 @@
             </p>
           </div>
           <img
-            :src="'https://dgzzoucizotfvfgamwgz.supabase.in/storage/v1/object/public/product-bucket/' + info.app_logo_url"
+            :src="'https://dgzzoucizotfvfgamwgz.supabase.in/storage/v1/object/public/product-bucket/' + info.app_landing_image_url"
             :alt="info.app_name"
             class="p-10 md:p-0"
           />
