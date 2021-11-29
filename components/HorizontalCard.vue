@@ -11,7 +11,7 @@
         </nuxt-link>
       </div>
       <div class="p-2 xl:p-8">
-        <div class="uppercase tracking-wide text-sm font-semibold">
+        <div class="uppercase tracking-wide text-lg font-semibold">
           {{ product.name }}
         </div>
         <a
@@ -20,10 +20,10 @@
           rel="noopener"
           class="block mt-1 leading-tight font-medium hover:underline"
         >
-          {{ product.brief }}
+          {{ product.category }}
         </a>
         <p class="mt-2  text-sm text-[#858685]">
-          {{ product.description }}
+          {{ product.brief }}
         </p>
       </div>
     </div>
